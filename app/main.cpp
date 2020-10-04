@@ -2,7 +2,8 @@
 #include <tags.h>
 
 int main(int argc, char *argv[]) {
-    auto tags = readTags(argv[1]);
+    MP3File file(argv[1]);
+    auto tags = file.readTags();
 
     std::cout << "Artist - " << tags[0] << std::endl;
     std::cout << "Title  - " << tags[1] << std::endl;
@@ -14,7 +15,9 @@ int main(int argc, char *argv[]) {
 
     std::array <std::string, 4> set {"Artist", "Title", "Album", "Genre"};
 
-    int result = writeTags(argv[1], set);
+    int result = file.writeTags(set);
     std::cout << std::endl << "Error - " << result << std::endl;
     std::cout << strerror(result) << std::endl;
+
+    system("leaks -q utag");
 }
