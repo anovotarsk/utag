@@ -3,4 +3,4 @@ project(utag_lib)
 
 include_directories(src .)
 
-add_library(utag_lib src/tags.cpp src/strsplit.cpp)
+add_library(utag_lib src/tags.cpp src/strsplit.cpp read_directory.cpp)
