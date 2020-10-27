@@ -1,18 +1,40 @@
 #include <iostream>
 #include <tags.h>
 #include <mainwindow.h>
+#include <QMessageBox>
 
-int main(int argc, char *argv[]) {
-    QApplication a(argc, argv);
+void check_arguments(int argc, char *argv[]) {
+    DIR* d;
+    std::string message = "";
+
     if (argc != 2) {
-        MainWindow w("", nullptr, false);
-        w.show();
-        return a.exec();
+        QApplication a(argc, argv);
+        QMessageBox b;
+        b.setIcon(QMessageBox::Critical);
+        b.setText("Invalid count of arguments!");
+        b.show();
+        exit(a.exec());
     }
-    MainWindow w(argv[1], nullptr, true);
-    w.show();
-    // MainWindow w(argv[1], nullptr, true);
-    // w.show();
-    return a.exec();
+
+    d = opendir(argv[1]);
+    if (!d) {
+        message += argv[1];
+        message += ": ";
+        message += strerror(errno);
+        QApplication a(argc, argv);
+        QMessageBox b;
+        b.setIcon(QMessageBox::Critical);
+        b.setText(message.c_str());
+        b.show();
+        exit(a.exec());
+    }
+    closedir(d);
 }
 
+int main(int argc, char *argv[]) {
+    check_arguments(argc, argv);
+    QApplication a(argc, argv);
+    MainWindow w(argv[1]);
+    w.show();
+    return a.exec();
+}

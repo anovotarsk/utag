@@ -17,7 +17,7 @@ public:
 
     std::array <std::string, 4> readTags();
     int writeTags(std::array <std::string, 4> tags);
-    int fileErrors();
+    int fileErrors(int mode);
 
 private:
     std::string m_name;

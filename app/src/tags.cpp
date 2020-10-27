@@ -26,8 +26,8 @@ std::string MP3File::getPath() {
     return m_path;
 }
 
-int MP3File::fileErrors() {
-    int error = (access(m_path.c_str(), 2)) ? errno : 0;
+int MP3File::fileErrors(int mode) {
+    int error = (access(m_path.c_str(), mode) == -1) ? errno : 0;
     errno = 0;
     return error;
 }
@@ -47,7 +47,7 @@ std::array <std::string, 4> MP3File::readTags() {
 }
 
 int MP3File::writeTags(std::array <std::string, 4> tags) {
-    int error = (access(m_path.c_str(), 2)) ? errno : 0;
+    int error = (access(m_path.c_str(), 2) == -1) ? errno : 0;
 
     if (error == 0) {
         TagLib::MPEG::File file(m_path.c_str(), false);

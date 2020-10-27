@@ -16,7 +16,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(std::string dir, QWidget *parent = nullptr, bool status=true);
+    explicit MainWindow(std::string dir, QWidget *parent = nullptr);
     ~MainWindow();
 
     void fill_listView();
@@ -28,12 +28,13 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    std::vector<std::string> m_files;
+    //std::vector<std::string> m_files;
     std::vector<std::string> m_pathes;
     bool m_status;
 
     void line_setEnable(bool flag);
     void fill_lines(std::string file);
+    std::string getName(std::string file); 
 };
 
 #endif // MAINWINDOW_H

@@ -11,7 +11,6 @@ std::vector<std::pair<std::string, std::string>> recursive_open(std::vector<std:
     DIR *dir;
     DIR *tmp_dir;
 
-    //std::cout << dirr << std::endl;
     dir = opendir(dirr);
     if (dir != NULL) {
         while ((tmp = readdir(dir)) != NULL) {
@@ -46,7 +45,7 @@ std::vector<std::pair<std::string, std::string>>  read_directory(const char *dir
 
     dir = opendir(dirr);
     if (!dir) {
-        std::cerr << "Is not a dir\n";
+        std::cerr << strerror(errno);
         exit(1);
     }
     closedir(dir);
