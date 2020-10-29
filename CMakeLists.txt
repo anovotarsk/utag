@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.18)
 
 project(utag CXX)
 
-list(APPEND CMAKE_PREFIX_PATH "~/.brew/Cellar/qt/5.15.1/")
+#list(APPEND CMAKE_PREFIX_PATH "~/.brew/Cellar/qt/5.15.1/")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)

@@ -7,6 +7,11 @@
 
 std::string* strsplit(std::string str, char del, int *len);
 
+bool compareArtist(std::string i, std::string j);
+bool compareTitle(std::string i, std::string j);
+bool compareAlbum(std::string i, std::string j);
+bool compareGenre(std::string i, std::string j);
+
 class MP3File {
 public:
     MP3File(std::string file);

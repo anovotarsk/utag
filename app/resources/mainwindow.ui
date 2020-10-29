@@ -110,6 +110,75 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>667</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSort">
+    <property name="title">
+     <string>Sort</string>
+    </property>
+    <addaction name="actionArtist"/>
+    <addaction name="actionAlbum"/>
+    <addaction name="actionTitle"/>
+    <addaction name="actionGenre"/>
+    <addaction name="actionASCII"/>
+    <addaction name="actionReverse"/>
+   </widget>
+   <addaction name="menuSort"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionArtist"/>
+   <addaction name="actionAlbum"/>
+   <addaction name="actionTitle"/>
+   <addaction name="actionGenre"/>
+   <addaction name="actionASCII"/>
+   <addaction name="actionReverse"/>
+  </widget>
+  <action name="actionArtist">
+   <property name="text">
+    <string>Artist</string>
+   </property>
+  </action>
+  <action name="actionAlbum">
+   <property name="text">
+    <string>Album</string>
+   </property>
+  </action>
+  <action name="actionTitle">
+   <property name="text">
+    <string>Title</string>
+   </property>
+  </action>
+  <action name="actionGenre">
+   <property name="text">
+    <string>Genre</string>
+   </property>
+  </action>
+  <action name="actionReverse">
+   <property name="text">
+    <string>Reverse</string>
+   </property>
+  </action>
+  <action name="actionASCII">
+   <property name="text">
+    <string>ASCII</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

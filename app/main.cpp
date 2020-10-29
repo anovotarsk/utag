@@ -1,7 +1,6 @@
 #include <iostream>
 #include <tags.h>
 #include <mainwindow.h>
-#include <QMessageBox>
 
 void check_arguments(int argc, char *argv[]) {
     DIR* d;

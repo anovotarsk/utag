@@ -65,3 +65,43 @@ int MP3File::writeTags(std::array <std::string, 4> tags) {
     errno = 0;
     return error;
 }
+
+bool compareArtist(std::string i, std::string j) {
+    MP3File* mp3_i = new MP3File(i);
+    MP3File* mp3_j = new MP3File(j);
+    bool rez = mp3_i->readTags()[0] < mp3_j->readTags()[0];
+
+    delete mp3_i;
+    delete mp3_j;
+    return rez;
+}
+
+bool compareTitle(std::string i, std::string j) {
+    MP3File* mp3_i = new MP3File(i);
+    MP3File* mp3_j = new MP3File(j);
+    bool rez = mp3_i->readTags()[1] < mp3_j->readTags()[1];
+
+    delete mp3_i;
+    delete mp3_j;
+    return rez;
+}
+
+bool compareAlbum(std::string i, std::string j) {
+    MP3File* mp3_i = new MP3File(i);
+    MP3File* mp3_j = new MP3File(j);
+    bool rez = mp3_i->readTags()[2] < mp3_j->readTags()[2];
+
+    delete mp3_i;
+    delete mp3_j;
+    return rez;
+}
+
+bool compareGenre(std::string i, std::string j) {
+    MP3File* mp3_i = new MP3File(i);
+    MP3File* mp3_j = new MP3File(j);
+    bool rez = mp3_i->readTags()[3] < mp3_j->readTags()[3];
+
+    delete mp3_i;
+    delete mp3_j;
+    return rez;
+}
