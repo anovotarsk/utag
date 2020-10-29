@@ -23,7 +23,8 @@ If you do not have ```CMAKE_PREFIX_PATH``` you can fix it in 2 ways:
 - Allows to edit different tags of audio files 
 - Supports to sort audio file items in alphabetical (ascending and descending) and order by selected tags
 - Opens the directory with the audio files through the command-line argument
-
+- Recursive search for files in a folder
+- Сatching deleted files
 
 ## Tech/framework used
  - CMake
