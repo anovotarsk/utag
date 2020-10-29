@@ -15,6 +15,8 @@ include_directories(taglib app/src)
 
 add_compile_options(-std=c++17)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../)
+
 add_executable(${PROJECT_NAME} app/main.cpp app/resources/mainwindow.ui)
 
 add_subdirectory(taglib)
